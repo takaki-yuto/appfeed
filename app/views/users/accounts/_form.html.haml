@@ -1,0 +1,23 @@
+= form_with model: user, url: users_account_path, local: true do |f|
+  %div
+    = f.label :name, "アカウント名:"
+    = f.text_field :name
+  %div
+    = f.label :img_icon, "アイコン画像"
+    = f.file_field :img_icon
+  %div
+    = f.label :email, "メールアドレス:"
+    = f.email_field :email
+  %div
+    = f.label :birth_date, "生年月日:"
+    = f.date_field :birth_date
+  - if controller.action_name == "new"
+    %div
+      = f.label :password, "パスワード:" 
+      = f.password_field :password
+    %div
+      = f.label :password_confirmation, "確認用パスワード:" 
+      = f.password_field :password_confirmation
+  %div
+    = f.submit "ログイン"
+    = link_to "topページ", root_path
