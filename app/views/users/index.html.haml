@@ -1,0 +1,6 @@
+- if !current_user
+  = link_to "ログイン", users_login_path, local: true
+  = link_to "新規登録", users_sign_up_path, local: true
+- else
+  = link_to "アカウント編集", edit_users_account_path, local: true
+  = link_to "ログアウト", users_session_path, local: true, method: :delete

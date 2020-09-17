@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root "users#index"
+  namespace :users do
+    get :login, to: "sessions#new", as: :login
+    resource :session, only: [:create, :destroy] 
+    get :sign_up, to: "accounts#new", as: :sign_up
+    resource :account
+  end
 end
