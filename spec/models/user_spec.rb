@@ -141,8 +141,25 @@ RSpec.describe User, type: :model do
         user.save!
         expect(user2).to be_invalid
       end
-
     end
+  end
 
+  describe "birth_date" do
+    context "不正な入力ケース" do
+      example "空白のみの場合" do
+        user.birth_date = " "
+        expect(user).to be_invalid
+      end
+
+      example "nilの場合" do
+        user.birth_date = nil
+        expect(user).to be_invalid
+      end
+
+      example "未来の日付の場合" do
+        user.birth_date = Date.today.tomorrow
+        expect(user).to be_invalid
+      end
+    end
   end
 end 

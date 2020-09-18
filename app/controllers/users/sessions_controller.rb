@@ -1,4 +1,4 @@
-class Users::SessionsController < Users::Base
+class Users::SessionsController < ApplicationController
 
   def new
     if current_user
