@@ -1,0 +1,26 @@
+%h1 アプリ詳細ページ
+- if current_user.id == @post.user_id 
+  = link_to "編集ページ", edit_app_post_path(@post.id), local: true
+  = link_to "削除", app_post_path(@post.id), local: true, method: :delete, data: { confirm: '削除してよろしいですか？' }
+= link_to "topページ", root_path
+%p アプリ名
+= @post.name
+%p 開発環境
+= @post.dev_environment
+%p 言語
+= @post.using_language
+- if @post.using_lib_fram.present? && @post.using_other.present?
+  %p ライブラリ・フレームワーク
+  = @post.using_lib_fram
+  %p その他
+  = @post.using_other
+- if @post.dev_period.present?
+  %p 作成期間
+  = @post.dev_period
+- if @post.background.present?
+  %p 背景
+  = @post.background
+%p 詳細
+= markdown(@post.detail)
+%div
+  = link_to "topページ", root_path

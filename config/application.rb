@@ -13,6 +13,8 @@ module Appfeed
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja
+    config.action_view.sanitized_allowed_tags = %w(h1 h2 h3 h4 h5 strong em a p div pre span)
+    config.action_view.sanitized_allowed_attributes = %w(class id src href style) 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

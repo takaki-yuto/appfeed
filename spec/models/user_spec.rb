@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   describe "name" do
     context "不正な入力ケース" do
       example "空白のみの場合" do
-        user.name = "　"
+        user.name = " "
         expect(user).to be_invalid
       end
 
@@ -68,16 +68,15 @@ RSpec.describe User, type: :model do
   
   describe "email" do
     context "不正な入力ケース" do
-      let(:domein) { "@exapmle.com" }
-
+      let(:domain) { "@exapmle.com" }
       example "255文字を超える入力" do
-        user.email = "a" * (256 - domein.length) + domein
+        user.email = "a" * (256 - domain.length) + domain
         expect(user.email.length).to eq(256)
         expect(user).to be_invalid
       end
       
       example "255文字の入力" do
-        user.email = "a" * (255 - domein.length) + domein
+        user.email = "a" * (255 - domain.length) + domain
         expect(user.email.length).to eq(255)
         expect(user).to be_valid
       end

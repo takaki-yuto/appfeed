@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     get :sign_up, to: "accounts#new", as: :sign_up
     resource :account
   end
+
+  resources :app_posts
+
 end
