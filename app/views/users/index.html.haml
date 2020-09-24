@@ -4,3 +4,13 @@
 - else
   = link_to "アカウント編集", edit_users_account_path, local: true
   = link_to "ログアウト", users_session_path, local: true, method: :delete
+  = link_to "アプリ投稿", new_app_post_path, local: true
+  %div
+    - @apps.each do |a|
+      %p ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      = link_to "詳細ページ", app_post_path(a.id), local: true
+      %div
+      %h4 SANITIZE
+      = a.name
+      %h3 投稿内容
+      = markdown(a.detail)

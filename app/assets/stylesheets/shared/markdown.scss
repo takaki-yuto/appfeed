@@ -1,0 +1,13 @@
+.CodeRay {
+  .code {
+    background-color: #e3e3e3;
+    pre {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    pre::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

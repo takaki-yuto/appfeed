@@ -1,0 +1,33 @@
+= form_with model: post, local: true do |f|
+  %div
+    = f.label :name, "アプリ名(必須)*190字以内"
+    = f.text_field :name
+  %div 
+    %h3 開発環境
+    %div
+      = f.label :dev_environment, "OS等デバイス環境(必須)"
+      = f.text_field :dev_environment
+    %div
+      = f.label :using_language, "使用言語(必須)"
+      = f.text_field :using_language
+    %div
+      = f.label :using_lib_fram, "フレームワーク・ライブラリ"
+      = f.text_area :using_lib_fram
+    %div
+      = f.label :using_other, "その他"
+      = f.text_field :using_other
+  %div
+    %h3 内容
+    %div
+      = f.label :dev_period, "作成期間(必須)*190字以内"
+      = f.text_field :dev_period
+    %div
+      = f.label :background, "作成背景(任意)" 
+      = f.text_area :background
+    %div
+      = f.label :detail, "アプリ紹介(必須)"
+      = f.text_area :detail
+    %div
+      = f.submit "投稿"
+    %div
+      = link_to "topページ", root_path

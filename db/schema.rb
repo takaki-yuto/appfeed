@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_071624) do
+ActiveRecord::Schema.define(version: 2020_09_19_095640) do
+
+  create_table "app_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "dev_environment", null: false
+    t.string "using_language", null: false
+    t.text "using_lib_fram"
+    t.text "using_other"
+    t.text "detail", null: false
+    t.text "background"
+    t.string "dev_period"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_app_posts_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -24,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_09_13_071624) do
     t.index ["name"], name: "index_users_on_name"
   end
 
+  add_foreign_key "app_posts", "users"
 end
