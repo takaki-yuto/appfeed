@@ -18,6 +18,10 @@ class Users::AccountsController < ApplicationController
     end
   end
 
+  def show
+    @account = current_user
+  end
+
   def edit
     if !current_user
       redirect_to users_login_path

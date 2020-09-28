@@ -18,6 +18,9 @@
     %div
       = f.label :password_confirmation, "確認用パスワード:" 
       = f.password_field :password_confirmation
-  %div
-    = f.submit "ログイン"
-    = link_to "topページ", root_path
+    %div
+      = f.submit "作成"
+  - elsif controller.action_name == "edit"
+    %div
+      = f.submit "編集"
+  = link_to "topページ", root_path
