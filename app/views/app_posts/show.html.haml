@@ -68,11 +68,6 @@
                         = @post.using_other
                     %tr
                       %th
-                        機能説明
-                      %td
-                        = markdown(@post.detail)
-                    %tr
-                      %th
                         作成期間
                       %td
                         = @post.dev_period
@@ -81,6 +76,11 @@
                         作成経緯
                       %td
                         = @post.background
+                    %tr
+                      %th
+                        機能説明
+                      %td
+                        = markdown(@post.detail)
               #tab02
                 .message-content
                   .message-box
