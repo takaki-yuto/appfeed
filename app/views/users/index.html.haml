@@ -1,16 +1,133 @@
-- if !current_user
-  = link_to "ログイン", users_login_path, local: true
-  = link_to "新規登録", users_sign_up_path, local: true
-- else
-  = link_to "アカウント編集", edit_users_account_path, local: true
-  = link_to "ログアウト", users_session_path, local: true, method: :delete
-  = link_to "アプリ投稿", new_app_post_path, local: true
-  %div
-    - @apps.each do |a|
-      %p ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      = link_to "詳細ページ", app_post_path(a.id), local: true
-      %div
-      %h4 SANITIZE
-      = a.name
-      %h3 投稿内容
-      = markdown(a.detail)
+/ Slider main container
+.swiper-container
+  / Additional required wrapper
+  .swiper-wrapper
+    / Slides
+    .swiper-slide 
+      = image_tag "welcome.jpg"
+    .swiper-slide 
+      = image_tag "welcome.jpg"
+    .swiper-slide 
+      = image_tag "welcome.jpg"
+    \...
+  / If we need pagination
+  .swiper-pagination
+  / If we need navigation buttons
+  .swiper-button-prev
+  .swiper-button-next
+  / If we need scrollbar
+  .swiper-scrollbar
+
+
+
+
+//ピックアップ(新規投稿された9個を表示)
+#newpost-picup-content
+  .newpost-picup-box
+    .newpost-picup-title-box
+      .newpost-picup-title-sub
+        ピックアップカテゴリー
+      .newpost-picup-title-main
+        新規投稿
+      .app-lists
+        .app-list
+          = link_to app_details_apps_path do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+        .app-list
+          = link_to "#" do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+        .app-list
+          = link_to "#" do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+        .app-list
+          = link_to "#" do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+        .app-list
+          = link_to "#" do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+        .app-list
+          = link_to "#" do
+            .app-img
+              = image_tag "welcome.jpg"
+            .app-body
+              .app-body-name
+                test
+              .app-body-details
+                %ul
+                  %li 
+                    test2
+                  %li
+                    %i.fa.fa-star.icon
+                    %before
+                      0
+
+
+%div
+  - @apps.each do |a|
+    %p ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    = link_to "詳細ページ", app_post_path(a.id), local: true
+    %div
+    %h4 SANITIZE
+    = a.name
+    %h3 投稿内容
+    = markdown(a.detail)

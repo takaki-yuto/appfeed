@@ -338,3 +338,102 @@
     clear: both;
   } 
 }
+
+
+/* トップページ */
+.swiper-container {
+  width: 600px;
+  height: 300px;
+  img {
+    width: 38vw;
+    height: 550px;
+    object-fit: cover;
+  }
+}
+
+/* ピックアップ(新規投稿9個) */
+#newpost-picup-content {
+  .newpost-picup-box {
+    padding: 10vh;
+    @media screen and ( max-width : 900px ) {
+      padding: 10vh 0;
+    }
+    .newpost-picup-title-box {
+      text-align: center;
+      font-weight: bold;
+      .newpost-picup-title-sub {
+        color: orange;
+      }
+      .newpost-picup-title-main {
+        font-size: 40px;
+      }
+      .app-lists{
+        width: 850px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .app-list{
+          display: inline-block;
+          margin-bottom: 15px;
+          border: 1px solid;
+          a{
+            text-decoration: none;
+            background-color: #fff;
+            display: inline-block;
+            .app-img {
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                z-index: auto;
+                height: 150px;
+                object-fit: cover;
+              }
+            }
+            .app-body {
+              background-color: #ffffff;
+              color: #333;
+              padding: 16px;
+              font-weight: none;
+              .app-body-name{
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              .app-body-details {
+                font-size: 16px;
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  li {
+                    margin: 0;
+                    padding: 0;
+                  }
+                  .fa.fa-star {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
