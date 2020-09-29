@@ -1,0 +1,23 @@
+%h1 アカウント管理画面
+- if current_user
+  %div 
+    = link_to "アカウント編集", edit_users_account_path, local: true
+    = link_to "パスワード変更", edit_users_password_path, local: true
+  %table
+    %tr 
+      %td アカウント名
+      %td 
+        = @account.name
+    %tr 
+      %td メールアドレス
+      %td
+        = @account.email
+    %tr 
+      %td 生年月日
+      %td
+        = @account.birth_date
+    %tr 
+      %td パスワード
+      %td.password 
+        *********
+= link_to "topページ", root_path

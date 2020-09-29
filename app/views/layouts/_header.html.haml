@@ -15,12 +15,15 @@
       -# %ul.nav__lists-left
       -#   %li.list-lefts__item.lists-left__item--first
       %ul.nav__lists-right
-        %li.lists-right__item.lists-right__item--logout
-          ログアウト
-        = link_to post_app_apps_path do
+        - if current_user
+          %li.lists-right__item.lists-right__item--logout
+            = link_to "ログアウト", users_session_path, local: true, method: :delete
           %li.lists-right__item.lists-right__item--show
-            アプリ投稿
-        %li.lists-right__item.lists-right__item--login
-          ログイン
-        %li.lists-right__item.lists-right__item--new
-          新規会員登録
+            = link_to "アプリ投稿", new_app_post_path, local: true
+          %li.lists-right__item.lists-right__item--account
+            = link_to "アカウント管理画面", users_account_path, local: true
+        - else
+          %li.lists-right__item.lists-right__item--login
+            = link_to "ログイン", users_login_path, local: true
+          %li.lists-right__item.lists-right__item--new
+            = link_to "新規登録", users_sign_up_path, local: true
