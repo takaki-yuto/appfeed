@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy] 
     get :sign_up, to: "accounts#new", as: :sign_up
     resource :account
+    resource :password
   end
 
-  resources :app_posts
-
+  resources :app_posts, shallow: true do
+    resources :feedbacks
+  end
 end
