@@ -1,8 +1,7 @@
 = render 'layouts/header'
-
-.main
+.main{ data: { appPost: { id: @post.id } } }
   .main__show
-    .content__leftqq
+    .content__left
     .content__right
       .top-content
         .item-box
@@ -38,7 +37,7 @@
                       %th
                         作成者
                       %td
-                        テスト太郎
+                        = @post_user.name
                     %tr
                       %th
                         アプリ名
@@ -82,22 +81,8 @@
                       %td
                         = markdown(@post.detail)
               #tab02
-                .message-content
-                  .message-box
-                    .upper-message
-                      .user-name
-                        テスト太郎
-                      .date-time
-                        2020年6月13日 10時10分
-                    .lower-message
-                      .message-text
-                        〇〇部分を以下のようにしたら、利便性がよくなりそうですね！
-                        〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
-                .message-form
-                  .new-message
-                    .input-box
-                      %input{:type => "text",:class => "text"}
-                      = submit_tag '送信', class: 'send-btn'
+                #commentAreaVue
+              = javascript_pack_tag 'comment.js'
           .optional-area
             %ul
               %li.optional-btn.like-btn
@@ -115,15 +100,7 @@
             = link_to "#",class:"no-underline" do
               %button.edit-btn{type: "submit"}
                 編集する
-
 = render 'layouts/footer'
-
-
-
-
-
-
-
 -# %h1 アプリ詳細ページ
 -# - if current_user.id == @post.user_id 
 -#   = link_to "編集ページ", edit_app_post_path(@post.id), local: true

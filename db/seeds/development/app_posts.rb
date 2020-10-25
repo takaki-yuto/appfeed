@@ -1,5 +1,5 @@
 user = User.create(
-  name: "test", 
+  name: "takaki yuto", 
   email: "example@example.com",
   password: "password",
   birth_date: "2020-01-01"
@@ -8,10 +8,10 @@ user.save!
 100.times do |n|
   name = "appfeed"
   dev_env ="mac"
-  lang = "ruby", "javascript"
-  lib_fram = "rails", "JQuery"
+  lang = "ruby, javascript"
+  lib_fram = "rails, JQuery"
   other = ""
-  bg = "yuto takagiの趣味"
+  bg = "作成したアプリを共有できる環境を作りたいと思ったため"
   dev_per = "2ヶ月"
   detail = Faker::Markdown.random
   user_id = user.id

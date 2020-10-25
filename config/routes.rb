@@ -9,7 +9,15 @@ Rails.application.routes.draw do
     resource :password
   end
 
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+      resources :feedbacks, only: [:index]
+    end
+  end
+
   resources :app_posts, shallow: true do
-    resources :feedbacks
+    resources :feedbacks, only: [:create, :update, :destroy]
+    # post :create, to: "feedbacks#create", defaults: { format: 'json' }
+    # patch :update, to: "feedbacks#update", defaults: { format: 'json' }
   end
 end
