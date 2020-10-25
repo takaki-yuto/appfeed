@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :app_posts
+  has_many :feedbacks
 
   before_save { email.downcase! }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

@@ -87,58 +87,8 @@
               #tab01 {
                 font-size: 14.5px;
               }
-              #tab02 {
-                .message-content {
-                  height: 350px;
-                  margin: 10px auto 10px;
-                  overflow: scroll;
-                  background-color: white;
-                  .message-box {
-                    width: 100%;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    .upper-message {
-                      display: flex;
-                      .user-name {
-                        font-size: 16px;
-                      }
-                      .date-time {
-                        margin-left: 5px;
-                        font-size: 12px;
-                        color: #999999;
-                      }
-                    }
-                    .lower-message {
-                      .message-text {
-                        font-size: 14px;
-                      }
-                    }
-                  }
-                }
-                .message-form {
-                  font-size: 25px;
-                  width: 80%;
-                  margin: 0 auto 10px;
-                  .input-box {
-                    width: 100%;
-                    .text {
-                      width: 63%;
-                      border: 1px solid #ccc;
-                      color: #434a54;
-                      height: 50px;
-                      padding: 0px 40px 0px 10px;
-                    }
-                    .send-btn {
-                      width: 100px;
-                      height: 50px;
-                      margin-left: 10px;
-                      color: white;
-                      border: 1px solid #ccc;
-                      background-color: #38aef0;
-                    }
-                  }
-                }
-              }
+              // #tab02 {}
+              // .vueにコーディング
               #tab04 {
                 font-size: 14px;
               }

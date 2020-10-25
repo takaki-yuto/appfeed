@@ -1,5 +1,6 @@
 class AppPost < ApplicationRecord
   belongs_to :user
+  has_many :feedbacks,         dependent: :destroy
   
   validates :name, 
             presence: true, length: { maximum: 190 }

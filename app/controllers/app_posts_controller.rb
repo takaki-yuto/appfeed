@@ -15,6 +15,9 @@ class AppPostsController < ApplicationController
   end
 
   def show
+    @post_user = User.find(@post.user_id)
+    @feedbacks = @post.feedbacks.includes(:app_post).order("created_at DESC")
+    @feedback = Feedback.new
   end
 
   def edit
