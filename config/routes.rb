@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "users#index"
+  root "app_posts#index"
   namespace :users do
     get :login, to: "sessions#new", as: :login
     resource :session, only: [:create, :destroy] 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :app_posts, shallow: true do
     resources :feedbacks, only: [:create, :update, :destroy]
-    # post :create, to: "feedbacks#create", defaults: { format: 'json' }
-    # patch :update, to: "feedbacks#update", defaults: { format: 'json' }
   end
+
+  resources :users, only: [:index] 
 end

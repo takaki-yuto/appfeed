@@ -1,133 +1,154 @@
-/ Slider main container
-.swiper-container
-  / Additional required wrapper
-  .swiper-wrapper
-    / Slides
-    .swiper-slide 
-      = image_tag "welcome.jpg"
-    .swiper-slide 
-      = image_tag "welcome.jpg"
-    .swiper-slide 
-      = image_tag "welcome.jpg"
-    \...
-  / If we need pagination
-  .swiper-pagination
-  / If we need navigation buttons
-  .swiper-button-prev
-  .swiper-button-next
-  / If we need scrollbar
-  .swiper-scrollbar
-
-
-
-
-//ピックアップ(新規投稿された9個を表示)
-#newpost-picup-content
-  .newpost-picup-box
-    .newpost-picup-title-box
-      .newpost-picup-title-sub
-        ピックアップカテゴリー
-      .newpost-picup-title-main
-        新規投稿
-      .app-lists
-        .app-list
-          = link_to app_details_apps_path do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-        .app-list
-          = link_to "#" do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-        .app-list
-          = link_to "#" do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-        .app-list
-          = link_to "#" do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-        .app-list
-          = link_to "#" do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-        .app-list
-          = link_to "#" do
-            .app-img
-              = image_tag "welcome.jpg"
-            .app-body
-              .app-body-name
-                test
-              .app-body-details
-                %ul
-                  %li 
-                    test2
-                  %li
-                    %i.fa.fa-star.icon
-                    %before
-                      0
-
-
-%div
-  - @apps.each do |a|
-    %p ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    = link_to "詳細ページ", app_post_path(a.id), local: true
-    %div
-    %h4 SANITIZE
-    = a.name
-    %h3 投稿内容
-    = markdown(a.detail)
+#about-content
+  .about-box
+    .my-details
+      .my-picture
+        = image_tag "test1.jpg",class: "my-picture-image"
+        .user-name-box
+          テスト太郎
+        .details
+          .app-post-num-box
+            投稿数
+            .app-post-sum
+              1
+          .follower-box
+            フォロワー
+            .follower-num
+              1
+        .follow-add-box
+          = submit_tag 'フォロー', class: 'send-btn'
+    .my-info
+      .post-ratio-content
+        投稿比率
+        .post-ratio-box
+          .post-data
+            投稿した記事
+            %br
+            Ruby on Rails 30%
+            %br
+            Ruby 30%
+            %br
+            Vue.js 10%
+            %br
+            Javascript 10%
+          .feed-back-data 
+            フィードバックを貰った記事
+            %br
+            Ruby on Rails 30%
+            %br
+            Ruby 30%
+            %br
+            Vue.js 10%
+            %br
+            Javascript 10%
+          .feed-add-data
+            フィードバックした記事
+            %br
+            Ruby on Rails 30%
+            %br
+            Ruby 30%
+            %br
+            Vue.js 10%
+            %br
+            Javascript 10%
+      .post-info
+        投稿一覧
+        .table
+          %ul.tabnav-a
+            %li
+              %a{:href => "#tab01"} 投稿
+            %li
+              %a{:href => "#tab02"} 回答
+            %li
+              %a{:href => "#tab02"} 質問
+          .tabcontent-a
+            //概要
+            #tab01
+              .post-app-content
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    app-feed
+                  .favorite-num
+                    %i.fa.fa-star
+                    10
+                  .dev-period
+                    自分の作ったアプリのフィードバックをもらいたいという思いから、このアプリを制作しました。・・・
+                  .date-time
+                    投稿日時：2020年6月13日 10時10分
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    tsk-mgmt
+                  .favorite-num
+                    %i.fa.fa-star
+                    5
+                  .dev-period
+                    日々の作業を管理するアプリです。
+                  .date-time
+                    投稿日時：2020年5月13日 10時10分
+              .pagenation
+                1/1
+            #tab02
+              .post-app-content
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    app-feed
+                  .favorite-num
+                    %i.fa.fa-star
+                    10
+                  .dev-period
+                    自分の作ったアプリのフィードバックをもらいたいという思いから、このアプリを制作しました。・・・
+                  .date-time
+                    投稿日時：2020年6月13日 10時10分
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    tsk-mgmt
+                  .favorite-num
+                    %i.fa.fa-star
+                    5
+                  .dev-period
+                    日々の作業を管理するアプリです。
+                  .date-time
+                    投稿日時：2020年5月13日 10時10分
+              .pagenation
+                1/1
+            #tab03
+              .post-app-content
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    app-feed
+                  .favorite-num
+                    %i.fa.fa-star
+                    10
+                  .dev-period
+                    自分の作ったアプリのフィードバックをもらいたいという思いから、このアプリを制作しました。・・・
+                  .date-time
+                    投稿日時：2020年6月13日 10時10分
+                .post-app-box
+                  .tab-name
+                    %i.fas.fa-tags
+                    Ruby , Ruby on Rails , Vue.js
+                  .app-name
+                    tsk-mgmt
+                  .favorite-num
+                    %i.fa.fa-star
+                    5
+                  .dev-period
+                    日々の作業を管理するアプリです。
+                  .date-time
+                    投稿日時：2020年5月13日 10時10分
+              .pagenation
+                1/1
