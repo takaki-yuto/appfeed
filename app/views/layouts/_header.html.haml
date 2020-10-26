@@ -21,7 +21,7 @@
           %li.lists-right__item.lists-right__item--show
             = link_to "アプリ投稿", new_app_post_path, local: true
           %li.lists-right__item.lists-right__item--account
-            = link_to "アカウント管理画面", users_account_path, local: true
+            = link_to "アカウント管理画面", users_path, local: true
         - else
           %li.lists-right__item.lists-right__item--login
             = link_to "ログイン", users_login_path, local: true

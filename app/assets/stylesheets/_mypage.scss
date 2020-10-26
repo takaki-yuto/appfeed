@@ -1,0 +1,236 @@
+#about-content {
+  background-color: #f6f6f4;
+  .about-box {
+    display: flex;
+    text-align: center;
+    padding: 10vh 30vh;
+    .my-details {
+      padding: 30px;
+      justify-content: center;
+      width: 23%;
+      height: 500px;
+      background-color: #fff;
+      display: flex;
+      .my-picture {
+        height: 200px;
+        width: 200px;
+        .my-picture-image {
+          object-fit: fill;
+          border-radius: 50%;
+          height: 100%;
+          width: 100%;
+        }
+        .user-name-box {
+          margin-top: 10px;
+        }
+        .details {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          .app-post-num-box {
+            width: 50px;
+            .app-post-sum {
+              text-align: center;
+            }
+          }
+          .follower-box {
+            margin-left: 10px;
+            width: 80px;
+            .follower-num {
+              text-align: center;
+            }
+          }
+        }
+        .follow-add-box {
+          margin-top: 20px;
+          .send-btn {
+            width: 100px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+          }
+          .send-btn:hover {
+            color: #fff;
+            background: #000;
+          }
+        }
+      }
+    }
+    .my-info {
+      margin: 0 0 0 20px;
+      text-align: left;
+      .post-ratio-content {
+        padding: 20px;
+        width: 90%;
+        background-color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 20px;
+        .post-ratio-box {
+          display: flex;
+          .post-data {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 100;
+          }
+          .feed-back-data {
+            margin: 10px 0 0 60px;
+            font-size: 12px;
+            font-weight: 100;
+          }
+          .feed-add-data {
+            margin: 10px 0 0 60px;
+            font-size: 12px;
+            font-weight: 100;
+          }
+        }
+      }
+      .post-info {
+        padding: 20px;
+        width: 90%;
+        background-color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        .table{
+          margin-bottom:20px;
+          .tabnav-a{
+            margin: 0;
+            padding: 0;
+            border-bottom: 2px solid #ddd;
+          }
+          .tabnav-a li{
+              display: inline;
+          }
+          .tabnav-a li a{
+            display: inline-block;
+            background: #fff;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            transition: .4s;
+          }
+          .tabnav-a li a:hover,
+          .tabnav-a li a.active{
+              background: #ddd;
+              color: black;
+              opacity: 0.85;
+          }
+          .tabcontent-a{
+            width: 100%;
+            #tab01 {
+              .post-app-content {
+                font-weight: 100;
+                height: 350px;
+                margin: 10px auto 10px;
+                overflow: scroll;
+                background-color: white;
+                .post-app-box {
+                  width: 100%;
+                  margin-bottom: 10px;
+                  border-bottom: 2px solid #ddd;
+                  .tab-name {
+                    margin-top: 10px;
+                    font-size: 16px;
+                  }
+                  .app-name {
+                    font-weight: bold;
+                    font-size: 17px;
+                  }
+                  .favorite-num {
+                    font-size: 12px;
+                  }
+                  .dev-period {
+                    font-size: 14px;
+                  }
+                  .date-time {
+                    font-size: 12px;
+                    color: #999999;
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+              .pagenation {
+                font-weight: 100;
+                text-align: center;
+              }
+            }
+            #tab02 {
+              .post-app-content {
+                font-weight: 100;
+                height: 350px;
+                margin: 10px auto 10px;
+                overflow: scroll;
+                background-color: white;
+                .post-app-box {
+                  width: 100%;
+                  margin-bottom: 10px;
+                  border-bottom: 2px solid #ddd;
+                  .tab-name {
+                    margin-top: 10px;
+                    font-size: 16px;
+                  }
+                  .app-name {
+                    font-weight: bold;
+                    font-size: 17px;
+                  }
+                  .favorite-num {
+                    font-size: 12px;
+                  }
+                  .dev-period {
+                    font-size: 14px;
+                  }
+                  .date-time {
+                    font-size: 12px;
+                    color: #999999;
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+              .pagenation {
+                font-weight: 100;
+                text-align: center;
+              }
+            }
+            #tab03 {
+              .post-app-content {
+                font-weight: 100;
+                height: 350px;
+                margin: 10px auto 10px;
+                overflow: scroll;
+                background-color: white;
+                .post-app-box {
+                  width: 100%;
+                  margin-bottom: 10px;
+                  border-bottom: 2px solid #ddd;
+                  .tab-name {
+                    margin-top: 10px;
+                    font-size: 16px;
+                  }
+                  .app-name {
+                    font-weight: bold;
+                    font-size: 17px;
+                  }
+                  .favorite-num {
+                    font-size: 12px;
+                  }
+                  .dev-period {
+                    font-size: 14px;
+                  }
+                  .date-time {
+                    font-size: 12px;
+                    color: #999999;
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+              .pagenation {
+                font-weight: 100;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
