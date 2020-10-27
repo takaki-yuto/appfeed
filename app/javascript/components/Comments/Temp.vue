@@ -1,12 +1,14 @@
 <template>
   <div
     :data-message-id="comment.id"
-    >
+  >
     <div 
       v-show="editStatus"
       class="message-innerbox"
-      >
-      <div class="user-icon">image</div>
+    >
+      <div class="user-icon">
+        image
+      </div>
       <div class="message-contents">
         <div class="upper-message">
           <div class="upper-message-left">
@@ -14,20 +16,22 @@
               {{ comment.name }}
             </div>
             <div class="date-time">
-              {{ comment.created_at | moment('YYYY年MM月DD HH:mm')}}
+              {{ comment.created_at | moment('YYYY年MM月DD HH:mm') }}
             </div>
           </div>
           <div 
             v-if="currentUserId === comment.user_id" 
             class="upper-message-right"
-            >
+          >
             <div class="right-box">
               <EditBtn
                 :comment-id="comment.id"
-                @send-edit-event="recieveEditEvent" />
+                @send-edit-event="recieveEditEvent"
+              />
               <br>
               <DestroyBtn 
-                :comment-id="comment.id" />
+                :comment-id="comment.id"
+              />
             </div>
           </div>
         </div>
@@ -39,26 +43,26 @@
     <template v-if="addCommentForm">
       <div class="return-btn-area">
         <a
-          @click="returnBtn"
           class="return-btn"
-          >戻る
+          @click="returnBtn"
+        >戻る
         </a>
       </div>
       <div class="update-form">
         <SubmitForm 
-          @resend-update-event="recieveUpdateEvent"
-          :current-msg-id="currentMsgId" 
-          />
+          :current-msg-id="currentMsgId"
+          @resend-update-event="recieveUpdateEvent" 
+        />
       </div>
     </template>
   </div>
 </template>
 
 <script>
-import moment from 'moment'
-import SubmitForm from './Submit/Form.vue'
-import DestroyBtn from './Btns/Destroy.vue'
-import EditBtn from './Btns/Edit.vue'
+import moment from 'moment';
+import SubmitForm from './Submit/Form.vue';
+import DestroyBtn from './Btns/Destroy.vue';
+import EditBtn from './Btns/Edit.vue';
 
 export default {
   components: {
@@ -66,12 +70,19 @@ export default {
     DestroyBtn,
     SubmitForm
   },
+  filters: {
+    moment(value, format) {
+      return moment(value).format(format);
+    }
+  },
   props: {
     currentUserId: {
-      type: Number
+      type: Number,
+      default: null
     },
     comment: {
-      type: Object
+      type: Object,
+      default: () => ({})
     },
   },
   data() {
@@ -79,31 +90,26 @@ export default {
       currentMsgId: null,
       editStatus: true,
       addCommentForm: false
-    }
+    };
   },
   methods: {
     recieveEditEvent() {
-      this.editStatus = false
-      this.addCommentForm = true
-      this.currentMsgId = Number(this.$el.dataset.messageId)
+      this.editStatus = false;
+      this.addCommentForm = true;
+      this.currentMsgId = Number(this.$el.dataset.messageId);
     },
     recieveUpdateEvent () {
       setTimeout(()=>{
-        this.editStatus = true
-        this.addCommentForm = false
-      }, 60)
+        this.editStatus = true;
+        this.addCommentForm = false;
+      }, 60);
     },
     returnBtn() {
-      this.editStatus = true
-      this.addCommentForm = false
-    }
-  },
-  filters: {
-    moment(value, format) {
-      return moment(value).format(format);
+      this.editStatus = true;
+      this.addCommentForm = false;
     }
   }
-}
+};
 </script>
 
 <style scoped>

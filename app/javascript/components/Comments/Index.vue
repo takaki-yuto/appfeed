@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TempComment from '../Comments/Temp.vue'
+import TempComment from '../Comments/Temp.vue';
 
 export default {
   components: {
@@ -18,47 +18,47 @@ export default {
   },
   computed: {
     comments () {
-      return this.$store.getters.comments
+      return this.$store.getters.comments;
     },
     currentUserId () {
-      return this.$store.getters.currentUserId
+      return this.$store.getters.currentUserId;
     }
   },
   mounted () {
     this.$nextTick(() => {
-      const postId = this.$el.closest('.main').dataset.apppostId
-      this.$store.dispatch('asyncCommentIndex', postId)
+      const postId = this.$el.closest('.main').dataset.apppostId;
+      this.$store.dispatch('asyncCommentIndex', postId);
     }),
     this.$store.watch(
       (state, getters) => getters.submitEventStatus,
       (newValue, olodValue) => {
         if (newValue === true) {
-          const postId = this.$el.closest('.main').dataset.apppostId
+          const postId = this.$el.closest('.main').dataset.apppostId;
           if ( this.$el.children.length !== 0 ) {
-            const lastMessageId = this.$el.firstElementChild.dataset.messageId
-            this.$store.dispatch('asyncAddComment', { postId, lastMessageId})
-            this.$store.commit('submitEvent', false)
+            const lastMessageId = this.$el.firstElementChild.dataset.messageId;
+            this.$store.dispatch('asyncAddComment', { postId, lastMessageId});
+            this.$store.commit('submitEvent', false);
           } else {
-            this.$store.dispatch('asyncCommentIndex', postId)
-            this.$store.commit('submitEvent', false)
+            this.$store.dispatch('asyncCommentIndex', postId);
+            this.$store.commit('submitEvent', false);
           }
         }
         // const lastMessagePosition = this.$el.firstElementChild.getBoundingClientRect().top
         // debugger
         // scrollToTop: () => scrollTo(0, lastMessagePosition)
-        const getSendBtn = document.getElementById('create-btn')
-        getSendBtn.disabled = false
+        const getSendBtn = document.getElementById('create-btn');
+        getSendBtn.disabled = false;
       }
     ),
     setInterval(() => {
-      const postId = this.$el.closest('.main').dataset.apppostId
+      const postId = this.$el.closest('.main').dataset.apppostId;
       if ( this.$el.children.length !== 0 ) {
-        const lastMessageId = this.$el.firstElementChild.dataset.messageId
-        this.$store.dispatch('asyncAddComment', { postId, lastMessageId })
+        const lastMessageId = this.$el.firstElementChild.dataset.messageId;
+        this.$store.dispatch('asyncAddComment', { postId, lastMessageId });
       } else {
-        this.$store.dispatch('asyncCommentIndex', postId)
+        this.$store.dispatch('asyncCommentIndex', postId);
       }
-    }, 1000000)
+    }, 1000000);
   },
-}
+};
 </script>

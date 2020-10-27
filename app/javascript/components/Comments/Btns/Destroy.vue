@@ -2,7 +2,7 @@
   <a  
     rel="nofollow" 
     @click="destroyComment" 
-    >
+  >
     削除
   </a>
 </template>
@@ -17,13 +17,13 @@ export default {
   },
   methods: {
     destroyComment() {
-      const getCommentId = this.commentId
-      const removeTarget = this.$el.closest('.message-innerbox')
-      const url = '/feedbacks/' + getCommentId
-      this.$store.dispatch('asyncRemoveComment', { url, id: getCommentId,  eventTarget: removeTarget })
+      const getCommentId = this.commentId;
+      const removeTarget = this.$el.closest('.message-innerbox');
+      const url = '/feedbacks/' + getCommentId;
+      this.$store.dispatch('asyncRemoveComment', { url, id: getCommentId,  eventTarget: removeTarget });
     }
   }
-}
+};
 </script>
 
 <style scoped>

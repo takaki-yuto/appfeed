@@ -2,7 +2,7 @@
   <a
     rel="nofollow"
     @click="editComment"
-    >
+  >
     編集
   </a>
 </template>
@@ -17,10 +17,10 @@ export default {
   },
   methods: {
     editComment() {
-      this.$emit('send-edit-event')
+      this.$emit('send-edit-event');
     }
   }
-}
+};
 </script>
 
 <style scoped>
