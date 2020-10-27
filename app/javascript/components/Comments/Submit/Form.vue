@@ -4,12 +4,14 @@
       <div class="form-box">
         <CreateForm 
           v-if="showCreateForm"
-          />
+        />
         <template
-          v-else>
+          v-else
+        >
           <UpdateForm 
+            :current-msg-id="currentMsgId"
             @send-update-event="recieveUpdateEvent"
-            :current-msg-id="currentMsgId" />
+          />
         </template>
       </div>
     </div>
@@ -17,8 +19,8 @@
 </template>
 
 <script>
-import CreateForm from './Create.vue'
-import UpdateForm from './Update.vue'
+import CreateForm from './Create.vue';
+import UpdateForm from './Update.vue';
 
 export default {
   components: {
@@ -35,26 +37,26 @@ export default {
     return {
       showCreateForm: false,
       showUpdateForm: false
-    }
+    };
   },
   mounted() {
     this.$nextTick(() => {
-      const createForm = this.$el.closest('.create-form')
-      const updateForm = this.$el.closest('.update-form')
+      const createForm = this.$el.closest('.create-form');
+      const updateForm = this.$el.closest('.update-form');
       if (createForm) {
-        this.showCreateForm = true
+        this.showCreateForm = true;
       } else if (updateForm) {
-        this.showCreateForm = false
-        this.showUpdateForm = true
+        this.showCreateForm = false;
+        this.showUpdateForm = true;
       }
-    })
+    });
   },
   methods: {
     recieveUpdateEvent () {
-      this.$emit('resend-update-event')
+      this.$emit('resend-update-event');
     }
   }
-}
+};
 </script>
 
 <style scoped>

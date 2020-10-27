@@ -1,18 +1,17 @@
 <template>
   <form @submit.prevent="createForm">
     <textarea
-      v-model="comment" 
-      id="feedback_comment"
-      >
-    </textarea>
+      id="feedback_comment" 
+      v-model="comment"
+    />
     <SubmitBtn 
       :valid-msg="validMsg"
-      />
+    />
   </form>
 </template>
 
 <script>
-import SubmitBtn from '../Btns/Submit.vue'
+import SubmitBtn from '../Btns/Submit.vue';
 
 export default {
   components: {
@@ -22,25 +21,25 @@ export default {
     return {
       comment: '',
       validMsg: ''
-    }
+    };
   },  
   methods: {
     createForm(e) {
       if (this.comment !== '') {
-        const eventTarget = e.currentTarget[1]
-        eventTarget.disabled = true
+        const eventTarget = e.currentTarget[1];
+        eventTarget.disabled = true;
         const getPath = location.pathname;
-        const postUrl = getPath + '/feedbacks/'
-        const comment = this.comment
-        this.$store.dispatch('asyncPostComment', { postUrl, comment })
-        this.comment = ''
-        this.validMsg = ''
+        const postUrl = getPath + '/feedbacks/';
+        const comment = this.comment;
+        this.$store.dispatch('asyncPostComment', { postUrl, comment });
+        this.comment = '';
+        this.validMsg = '';
       } else {
-        this.validMsg = 'コメントを入力してください'
+        this.validMsg = 'コメントを入力してください';
       }
     },
   }
-}
+};
 </script>
 
 <style>

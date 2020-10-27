@@ -2,10 +2,11 @@
   <div class="form-bottom">
     <span class="valid-msg">{{ msg }}</span>
     <button 
-      type="submit" 
-      name="commit" 
       id="create-btn" 
-      >送信
+      name="commit" 
+      type="submit" 
+    >
+      送信
     </button>
   </div>
 </template>
@@ -20,10 +21,10 @@ export default {
   },
   computed: {
     msg() {
-      return this.validMsg
+      return this.validMsg;
     }
   }
-}
+};
 </script>
 
 <style scoped>

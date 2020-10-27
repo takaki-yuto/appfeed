@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div class="message-content">
       <div class="message-box">
         <IndexBox />
@@ -12,21 +12,19 @@
 </template>
 
 <script>
-import axios from 'axios'
-import IndexBox from '../../components/Comments/Index.vue'
-import SubmitForm from '../../components/Comments/Submit/Form.vue'
-import TempComment from '../../components/Comments/Temp.vue'
+import axios from 'axios';
+import IndexBox from '../../components/Comments/Index.vue';
+import SubmitForm from '../../components/Comments/Submit/Form.vue';
 
-const token = document.getElementsByName('csrf-token')[0].getAttribute('content')
-axios.defaults.headers.common['X-CSRF-Token'] = token
+const token = document.getElementsByName('csrf-token')[0].getAttribute('content');
+axios.defaults.headers.common['X-CSRF-Token'] = token;
 
 export default {
   components: {
-    TempComment,
     IndexBox,
     SubmitForm
   },
-}
+};
 </script>
 
 <style scoped>

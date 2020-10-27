@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "plugin:vue/recommended"
+  ],
+  "plugins": ["vue"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": 0,
+    "quotes": ["warn", "single"],
+    "semi": "warn",
+    "no-unused-expressions": "off",
+    "no-alert": 0,
+    "no-param-reassign": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack",
+    "react": {
+      "version": "999.999.999"
+    }
+  }
+}
